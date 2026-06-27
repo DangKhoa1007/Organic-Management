@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 #include "function_name.h"
 
+
 int main() {
+	SetConsoleOutputCP(65001);
+	SetConsoleCP(65001);
+	
 	int choice, subChoice;
-    
     // Vòng lặp Menu cho phép người dùng chọn chức năng
     while (1) {
-        printf("\n========== MENU QUAN LY LO HANG ==========\n");
-        printf("1. Them thong tin lo hang (Add IO)          \n");
-        printf("2. In thong tin cac lo hang (Print IO)      \n");
-        printf("3. How you want to remove (Remove IO)       \n");
-        printf("4. Search batch by ID                       \n");
-        printf("5. Thoat chuong trinh                       \n");
-        printf("Nhap lua chon cua ban: ");
+        printf("\n========== MENU QUẢN LÝ LÔ HÀNG ==========\n");
+        printf("1. Thêm thông tin lô hàng (Add IO)          \n");
+        printf("2. In thông tin các lô hàng (Print IO)      \n");
+        printf("3. Xóa lô hàng (Remove IO)       \n");
+        printf("4. Tìm lô hàng dựa trên ID                       \n");
+        printf("5. Thoát chương trình                       \n");
+        printf("Nhập lựa chọn của bạn: ");
         scanf("%d", &choice);
         while (getchar() != '\n'); // Xóa bộ đệm sau khi nhập số
         
@@ -38,10 +42,10 @@ int main() {
 				searchByID();
 				break;
             case 5:
-                printf("Da thoat chuong trinh.\n");
+                printf("Đã thoát chương trình.\n");
                 exit(0);
             default:
-                printf("Lua chon khong hop le! Vui long nhap lai.\n");
+                printf("Lựa chọn không hợp lệ! Vui lòng nhập lại.\n");
         }
     }
     return 0;
