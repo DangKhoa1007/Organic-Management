@@ -8,16 +8,17 @@ int main() {
 	SetConsoleOutputCP(65001);
 	SetConsoleCP(65001);
 	int choice,subChoice;
+	mainMenu();
     while (1) {
         printf("\n========== MENU QUẢN LÝ LÔ HÀNG ==========\n");
         printf("1. Thêm thông tin lô hàng (Add IO)          \n");
         printf("2. In thông tin các lô hàng (Print IO)      \n");
         printf("3. Xóa lô hàng (Remove IO)                  \n");
-        printf("4. Tìm lô hàng dựa trên ID                  \n");
+        printf("4. Tìm lô hàng dựa trên Origin              \n");
         printf("5. Thoát chương trình                       \n");
         printf("Nhập lựa chọn của bạn:"                        );
         scanf(" %d", &choice);
-        while (getchar() != '\n');    // Xóa bộ đệm sau khi nhập số
+        while (getchar() != '\n');    
         switch (choice) {
             case 1:
                 addIO();
@@ -35,10 +36,11 @@ int main() {
 				}
 				break;
 			case 4:
-				searchByID();
+				searchByOrigin();
 				break;
             case 5:
                 printf("Đã thoát chương trình.\n");
+                
                 exit(0);
             default:
                 printf("Lựa chọn không hợp lệ! Vui lòng nhập lại.\n");
